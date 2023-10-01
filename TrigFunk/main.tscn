@@ -1,0 +1,162 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxpuc32wm8uy7"]
+
+[ext_resource type="Script" path="res://drawer.cs" id="1_gk2es"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0puw3"]
+font_size = 22
+font_color = Color(0.780392, 0, 0.333333, 1)
+outline_size = 2
+outline_color = Color(0.780392, 0, 0.333333, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pd2y"]
+font_size = 60
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_gk2es")
+
+[node name="DrawTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -148.5
+offset_top = -153.0
+offset_right = -140.5
+offset_bottom = -145.0
+text = "3.14"
+placeholder_text = "3.14
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(450, 0)
+zoom = Vector2(0.475, 0.475)
+
+[node name="Sin" type="ColorRect" parent="."]
+offset_left = 50.0
+offset_top = -325.0
+offset_right = 1100.0
+offset_bottom = 325.0
+
+[node name="XLine" type="ColorRect" parent="Sin"]
+layout_mode = 0
+offset_top = 325.0
+offset_right = 1050.0
+offset_bottom = 327.0
+color = Color(0, 0, 0, 1)
+
+[node name="Dot" type="ColorRect" parent="Sin/XLine"]
+z_index = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = -3.0
+offset_right = 54.0
+offset_bottom = 5.0
+color = Color(0.780392, 0, 0.333333, 1)
+
+[node name="YLine" type="ColorRect" parent="Sin"]
+layout_mode = 0
+offset_left = 49.0
+offset_right = 51.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="Dot" type="ColorRect" parent="Sin"]
+z_index = 1
+layout_mode = 0
+offset_left = 360.0
+offset_top = -128.0
+offset_right = 368.0
+offset_bottom = -120.0
+color = Color(0.780392, 0, 0.333333, 1)
+
+[node name="Number" type="Label" parent="Sin/Dot"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 38.0
+offset_bottom = 68.0
+text = "55
+"
+label_settings = SubResource("LabelSettings_0puw3")
+
+[node name="Dot2" type="ColorRect" parent="Sin"]
+z_index = 1
+layout_mode = 0
+offset_left = 674.0
+offset_top = -128.0
+offset_right = 682.0
+offset_bottom = -120.0
+color = Color(0.780392, 0, 0.333333, 1)
+
+[node name="Dot3" type="ColorRect" parent="Sin"]
+z_index = 1
+layout_mode = 0
+offset_left = 988.0
+offset_top = -128.0
+offset_right = 996.0
+offset_bottom = -120.0
+color = Color(0.780392, 0, 0.333333, 1)
+
+[node name="Line" type="Line2D" parent="Sin"]
+texture_filter = 1
+position = Vector2(50, 200)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -550.0
+offset_top = -443.0
+offset_right = 1719.0
+offset_bottom = 457.0
+color = Color(0.67451, 0.196078, 0.137255, 1)
+
+[node name="FPSCounter" type="Label" parent="."]
+offset_left = -149.0
+offset_top = -301.5
+offset_right = 23.0
+offset_bottom = -215.5
+scale = Vector2(0.403733, 0.403733)
+text = "60 fps
+"
+label_settings = SubResource("LabelSettings_7pd2y")
+
+[node name="FreqSlider" type="HSlider" parent="."]
+offset_left = -150.5
+offset_top = -118.0
+offset_right = 49.5
+offset_bottom = -102.0
+min_value = 0.314
+max_value = 31.4
+step = 0.01
+value = 0.614
+
+[node name="Label" type="Label" parent="FreqSlider"]
+layout_mode = 0
+offset_left = 33.5
+offset_top = -40.0
+offset_right = 73.5
+offset_bottom = -17.0
+
+[node name="AmpSlider" type="HSlider" parent="."]
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = -9.0
+min_value = 0.314
+max_value = 314.159
+step = 0.01
+value = 0.614
+
+[node name="Label" type="Label" parent="AmpSlider"]
+layout_mode = 0
+offset_left = 33.5
+offset_top = -40.0
+offset_right = 73.5
+offset_bottom = -17.0
+
+[connection signal="changed" from="FreqSlider" to="." method="_on_freq_slider_changed"]
+[connection signal="value_changed" from="FreqSlider" to="." method="_on_freq_slider_value_changed"]
+[connection signal="value_changed" from="AmpSlider" to="." method="_on_amp_slider_value_changed"]

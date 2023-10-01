@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrigFunk", "TrigFunk.csproj", "{2B50F988-C2F8-439E-BA3C-43B34471E1C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B50F988-C2F8-439E-BA3C-43B34471E1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B50F988-C2F8-439E-BA3C-43B34471E1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B50F988-C2F8-439E-BA3C-43B34471E1C0}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{2B50F988-C2F8-439E-BA3C-43B34471E1C0}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{2B50F988-C2F8-439E-BA3C-43B34471E1C0}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{2B50F988-C2F8-439E-BA3C-43B34471E1C0}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
