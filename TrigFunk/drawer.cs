@@ -41,15 +41,18 @@ public partial class drawer : Node2D
 				dot.GetNode<Label>("Number").Text = dots.ToString();
 			}
 
-
+			//adds pi points onto the x axis
 			for (int dots = 0; dots<length/2; dots++){
 				ColorRect dot = sin.GetNode<ColorRect>("Dot").Duplicate() as ColorRect ;
 				dot.Modulate = dot.Modulate with {R = 0.2f};
 				xline.AddChild(dot);
-				dot.Position = new Vector2( 46 + (dots*(linespace*6.28f)) , -3 );
+				dot.Position = new Vector2( 46 + (dots*(linespace*6.28f)/2f) , -3 );
 				dot.GetNode<Label>("Number").Position = new Vector2(0,-28);
 				dot.GetNode<Label>("Number").Text = dots.ToString() + "π" ;
 			}
+
+			/*
+			//adds pi points onto the y axis (i dont know why i make this)
 			for (int dots = -1; dots<length/2; dots++){
 				ColorRect dot = sin.GetNode<ColorRect>("Dot").Duplicate() as ColorRect ;
 				dot.Modulate = dot.Modulate with {R = 0.2f};
@@ -58,6 +61,7 @@ public partial class drawer : Node2D
 				dot.GetNode<Label>("Number").Position = new Vector2(0,-28);
 				dot.GetNode<Label>("Number").Text = dots.ToString() + "π" ;
 			}
+			*/
 		}
 	}
 
